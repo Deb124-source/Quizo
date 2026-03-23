@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizo - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="screen">
+        <div class="card">
+            <h1>🏠 Welcome, {{ username }}!</h1>
+            <p>Ready to challenge yourself? With a passing score, you earn a certificate instantly.</p>
+
+            <div class="rules">
+                <h3>Quiz rules</h3>
+                <ul>
+                    <li>4 questions, all MCQ</li>
+                    <li>65% required to pass</li>
+                    <li>No negative marking</li>
+                    <li>Instant certification on success</li>
+                </ul>
+            </div>
+
+            <div class="button-row">
+                <a href="/quiz" class="btn btn-primary">🚀 Start Quiz</a>
+                <a href="/logout" class="btn btn-secondary">Logout</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

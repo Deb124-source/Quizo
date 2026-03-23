@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizo - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="screen">
+        <div class="card">
+            <h1>🏆 Result - {{ name }}</h1>
+            <p>Your score: <strong>{{ score }}%</strong></p>
+
+            {% if score >= 65 %}
+                <h2 class="success">🎉 Passed!</h2>
+                <p>Well done! Your certificate is ready.</p>
+                <a href="/download/{{ cert_filename }}" class="btn btn-success">📥 Download Certificate</a>
+            {% else %}
+                <h2 class="fail">❌ Needs improvement</h2>
+                <p>Keep practicing and try again.</p>
+            {% endif %}
+
+            <div class="button-row">
+                <a href="/quiz" class="btn btn-primary">Try Again</a>
+                <a href="/" class="btn btn-secondary">Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

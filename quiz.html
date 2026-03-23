@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizo - Take the Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="screen">
+        <div class="card">
+            <h1>📝 Quiz Time</h1>
+            <p>Enter your name, answer all questions, and see your score.</p>
+
+            <form method="POST" class="quiz-form">
+                <div class="field">
+                    <label>Your Name</label>
+                    <input type="text" name="name" required>
+                </div>
+
+                {% for q in questions %}
+                {% set q_index = loop.index0 %}
+                <div class="question-block">
+                    <h3>Q{{ loop.index }}: {{ q.q }}</h3>
+                    <div class="options">
+                        {% for option in q.options %}
+                        <label for="q{{ q_index }}_{{ loop.index }}">
+                            <input id="q{{ q_index }}_{{ loop.index }}" type="radio" name="q{{ q_index }}" value="{{ option }}"> {{ option }}
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+
+                <button type="submit" class="btn btn-primary">Submit Quiz</button>
+            </form>
+
+            <a href="/" class="link">← Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate - {{ name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Congratulations {{ name }}!</h1>
+        <h2>You Passed the Quizo Challenge! 🎉</h2>
+        <p>Your personalized certificate is ready.</p>
+        
+        <a href="/download/{{ cert_filename }}" class="btn btn-success">📥 Download Certificate</a>
+        <a href="/quiz" class="btn btn-primary">Take Another Quiz</a>
+        <a href="/" class="btn btn-secondary">Home</a>
+
+        <!-- Static PDF Preview (added for static PDF serving demo) -->
+        <div style="margin-top: 30px;">
+            <h3>📄 Sample Static Certificate Preview:</h3>
+            <embed src="{{ url_for('static', filename='certificate.pdf') }}" width="500" height="375" type="application/pdf">
+            <p><small>Direct link: <a href="{{ url_for('static', filename='certificate.pdf') }}" target="_blank">View static/certificate.pdf</a></small></p>
+        </div>
+    </div>
+</body>
+</html>

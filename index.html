@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizo - Fun Quiz App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="screen">
+        <div class="card">
+            <h1>🎉 Welcome to Quizo!</h1>
+            <p>Sharpen your skills, complete the quiz, and claim your certificate.</p>
+
+            {% if login_required %}
+                <div class="button-row">
+                    <a href="/login" class="btn btn-primary">Login</a>
+                    <a href="/signup" class="btn btn-secondary">Sign Up</a>
+                </div>
+            {% else %}
+                <div class="button-row">
+                    <a href="/quiz" class="btn btn-primary">Start Quiz</a>
+                    <a href="/logout" class="btn btn-secondary">Logout</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
