@@ -39,7 +39,8 @@ A simple and efficient web-based application that automatically generates certif
 1. Clone the repository:
    ```bash
    git clone https://github.com/Deb124-source/quiz-certificate-generator.git
-``` 
+  
+   ``` 
 
 2. Navigate to the project folder:
 
@@ -72,7 +73,7 @@ Feel free to fork the repo and submit a pull request.
 
 ---
 
-##📄 License
+## 📄 License
 This project is open-source and available under the MIT License.
 
 ---
